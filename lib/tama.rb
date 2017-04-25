@@ -1,3 +1,4 @@
+require('pry')
 class Tama
 
   def initialize (satiety, happiness, perkiness)
@@ -32,19 +33,21 @@ class Tama
   end
 
   def add_satiety
-    @satiety +=1
+    @satiety += 1
   end
 
   def time_happens
-    every 5.seconds do
-      Tama.sub_status
+    if Time.now.sec % 3 == 0
+      @satiety -= 1
+      @happiness-= 1
+      @perkiness -= 1
     end
   end
 
-  def sub_status
-    @satiety -= 1
-    @happiness-= 1
-    @perkiness -= 1
-  end
+  # def sub_status
+  #   @satiety -= 1
+  #   @happiness-= 1
+  #   @perkiness -= 1
+  # end
 
 end

@@ -1,20 +1,42 @@
-<div class="status">
-  <h3>Happiness: <%= @test_tama.happiness %></h3>
-  <h3>Satiety: <%= @test_tama.satiety %></h3>
-  <h3>Perkiness: <%= @test_tama.perkiness %> </h3>
+<form action="/start" method="get">
+  <button type="submit" class="btn btn-success">Start</button>
+</form>
+
+
+<div class="panel panel-warning">
+  <div class="panel-heading">Status Board</div>
+  <div class="panel-body">
+    <h3>Happiness: <%= @@test_tama.happiness %></h3>
+    <h3>Satiety: <%= @@test_tama.satiety %></h3>
+    <h3>Perkiness: <%= @@test_tama.perkiness %> </h3>
+  </div>
+</div>
+
+<div class="dead">
+  <% if @@test_tama.happiness==0 %>
+    <h3>Your Tama died of sadness</h3>
+  <% end %>
+  <% if @@test_tama.satiety==0 %>
+    <h3>Your Tama died of hunger</h3>
+  <% end %>
+  <% if @@test_tama.perkiness==0 %>
+    <h3>Your Tama died of exhaustion</h3>
+  <% end %>
 </div>
 
 <img src="/img/Androtchi.png" alt="" />
 
-<form id="play">
-  <button type="submit" class="btn" action="/play" method="post">Play</button>
+<form action="/play" method="post">
+  <button type="submit" class="btn btn-danger">Play</button>
 </form>
-<br>
-<form id="feed">
-  <button type="submit" class="btn" action="/feed" method="post">Feed</button>
+<form action="/feed" method="post">
+  <button type="submit" class="btn btn-primary">Feed</button>
 </form>
-<br>
-<form id="nap">
-  <button type="submit" class="btn"action="/nap" method="post">Nap</button>
+<form action="/nap" method="post">
+  <button type="submit" class="btn btn-success">Nap</button>
 </form>
-<br>
+
+
+<form class="" action="index.html" method="post">
+
+</form>
