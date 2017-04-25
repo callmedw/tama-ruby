@@ -34,5 +34,17 @@ class Tama
   def add_satiety
     @satiety +=1
   end
-  
+
+  def time_happens
+    every 5.seconds do
+      Tama.sub_status
+    end
+  end
+
+  def sub_status
+    @satiety -= 1
+    @happiness-= 1
+    @perkiness -= 1
+  end
+
 end

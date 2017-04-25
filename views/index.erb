@@ -1,24 +1,20 @@
+<div class="status">
+  <h3>Happiness: <%= @test_tama.happiness %></h3>
+  <h3>Satiety: <%= @test_tama.satiety %></h3>
+  <h3>Perkiness: <%= @test_tama.perkiness %> </h3>
+</div>
+
 <img src="/img/Androtchi.png" alt="" />
 
-
-
-
 <form id="play">
-  <button type="submit" class="btn">Play</button>
+  <button type="submit" class="btn" action="/play" method="post">Play</button>
 </form>
-
+<br>
 <form id="feed">
-  <button type="submit" class="btn">Feed</button>
+  <button type="submit" class="btn" action="/feed" method="post">Feed</button>
 </form>
-
+<br>
 <form id="nap">
-  <button type="submit" class="btn">Nap</button>
+  <button type="submit" class="btn"action="/nap" method="post">Nap</button>
 </form>
-
-
-<!-- <p> Here are all the places you've been. Wow:</p>
-<ul>
-  <% @places.each() do |place| %>
-  <li><%= place.destination()%></li>
-  <% end %>
-</ul> -->
+<br>

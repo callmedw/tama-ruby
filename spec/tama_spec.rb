@@ -1,5 +1,6 @@
 require 'rspec'
 require 'tama'
+require 'whenever'
 
 describe (Tama) do
   describe('#satiety') do
@@ -55,6 +56,16 @@ describe (Tama) do
       test_tama = Tama.new(1, 1, 1)
       test_tama.add_satiety
       expect(test_tama.satiety).to(eq(2))
+    end
+  end
+
+  describe('#sub_status') do
+    it("lets you add -1 to stats") do
+      test_tama = Tama.new(2, 2, 2)
+      test_tama.sub_status
+      expect(test_tama.happiness).to(eq(1))
+      expect(test_tama.perkiness).to(eq(1))
+      expect(test_tama.satiety).to(eq(1))
     end
   end
 
